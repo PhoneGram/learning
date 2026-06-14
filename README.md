@@ -1,2 +1,3 @@
-# learning
-This repository contains my programming journey. 
+# Learning Programming
+This repository contains my programming journey.
+I am from Iraq.

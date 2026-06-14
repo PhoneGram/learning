@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --mainColor : #22C3DF;
   --secColor : #057B8F;
@@ -9,7 +13,7 @@
 
 @font-face {
   font-family: webs;
-  src: url(web_font.woff2);
+  src: url(../fonts/webs.woff2);
 }
 
 body {
@@ -24,17 +28,13 @@ body {
   color: black;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .mw {
   width: 85%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.ms {
+.scroll-top {
   scroll-margin-top: 100px;
 }
 
@@ -58,11 +58,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.left_header img {
-  margin-left: 8px;
-  width: 60px;
+  margin-left: 20px;
 }
 
 .left_header span {
@@ -72,7 +68,8 @@ header {
 
 .middle_header {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -80,13 +77,9 @@ header {
   padding-left: 8px;
   background-color: transparent;
   border: 2px solid black;
-  border-radius: 8px;
-  width: 300px;
+  border-radius: 10px;
+  width: 200px;
   height: 35px;
-}
-
-.middle_header span {
-  margin-left: 8px;
 }
 
 .middle_header input::placeholder {
@@ -98,16 +91,7 @@ header {
 .menu {
   position: relative;
   cursor: pointer;
-  padding-bottom: 10px;
-  padding-top: 50%;
-}
-
-.menu span {
-  margin-right: 8px;
-}
-
-.right_header {
-  position: relative;
+  margin-right: 20px;
 }
 
 .menu ul {
@@ -122,14 +106,15 @@ header {
   background-color: #868790;
   justify-content: center;
   width: 200px;
-  display: none;
   z-index: 100;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .menu ul::before {
   content: "";
   position: absolute;
-  right: 10px;
+  right: 2px;
   top: -20px;
   border-color: transparent transparent #868790 transparent;
   border-style: solid;
@@ -160,8 +145,10 @@ header {
   height: 100%;
 }
 
-.menu:hover ul {
-  display: flex;
+.menu:hover ul,
+.menu:hover ul::before {
+  max-height: 1000px;
+  overflow: visible;
 }
 
 .menu ul li:hover {
@@ -175,34 +162,113 @@ header {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 200px));
+  grid-template-columns: repeat(3, minmax(100px, auto));
   gap: 15px;
-  justify-content: center;
-}
-
-.grid div {
-  background-color: #A6A6A6;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contact table {
-  border-collapse: collapse;
-}
-
-.contact table td {
-  background-color: #999999;
-  border: 1px solid #707070;
-  padding: 10px;
+  justify-content: space-between;
 }
 
 footer {
-  margin: 25px;
   background-color: #3A3E56;
   height: 100px;
+  font-weight: bold;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px
+}
+
+.box-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #D6D6D6;
+  border-radius: 20px;
+}
+
+.box-grid > img {
+  width: 70%;
+  -align: middle;
+}
+
+.desc-pics {
+  margin-right: 5iiipx;
+}
+
+.box-grid > button {
+  margin-bottom: 13px;
+  width: 80%;
+  height: 40px;
+  color: white;
+  background-color: var(--secColor);
+  border: 1px solid black;
+  border-radius: 20px;
+  text-transform: uppercase;
+  transition: all 0.3s linear;
+}
+
+.box-grid > button:hover {
+  background-color: white;
+  color: var(--secColor);
+  font-weight: bold;
+}
+
+
+section #about + p {
+  background-color: var(--mainColor);
+  color: black;
+  padding: 8px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact {
+  align-self: flex-start;
+}
+
+.box-contact {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.box-contact a {
+  background-color: #B1B3D4;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 30px;
+  margin: 0 1.7px;
+}
+
+.box-contact a img {
+  width: 40px;
+  vertical-align: middle;
+}
+
+.box-contact a span {
+  color: black;
+  font-weight: bold;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  transition: max-width 0.5s ease, opacity 0.3s ease, margin 0.5s ease;
+}
+
+.box-contact a:hover span {
+  max-width: 200px;
+  opacity: 1;
+  margin-left: 8px;
 }
