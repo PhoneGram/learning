@@ -167,17 +167,6 @@ header {
   justify-content: space-between;
 }
 
-footer {
-  background-color: #3A3E56;
-  height: 100px;
-  font-weight: bold;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px
-}
 
 .box-grid {
   display: flex;
@@ -271,4 +260,16 @@ section #about + p {
   max-width: 200px;
   opacity: 1;
   margin-left: 8px;
+}
+
+footer {
+  background-color: #3A3E56;
+  height: 100px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px
 }
