@@ -160,10 +160,41 @@ header {
   cursor: pointer;
 }
 
+.hero-section {
+  background-color: #DFDFE6;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.hero-section a {
+  text-decoration: none;
+  text-align: center;
+  background-color: var(--mainColor);
+  color: black;
+  font-weight: bold;
+  font-size: 26px;
+  padding: 8px;
+  border-radius: 20px;
+  width: 150px;
+  transition: all 0.4s ease;
+}
+
+.hero-section a:hover {
+  background-color: black;
+  color: var(--mainColor);
+  transform: rotate(-3deg);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(100px, auto));
-  gap: 15px;
+  gap: 10px;
   justify-content: space-between;
 }
 
@@ -175,6 +206,7 @@ header {
   align-items: center;
   background-color: #D6D6D6;
   border-radius: 20px;
+  padding: 10px;
 }
 
 .box-grid > img {
@@ -202,6 +234,8 @@ header {
   background-color: white;
   color: var(--secColor);
   font-weight: bold;
+  border: 2px solid var(--mainColor);
+  transform: rotate(-1.5deg);
 }
 
 
@@ -243,6 +277,7 @@ section #about + p {
 .box-contact a img {
   width: 40px;
   vertical-align: middle;
+  transition: transform 0.4s ease;
 }
 
 .box-contact a span {
@@ -260,6 +295,10 @@ section #about + p {
   max-width: 200px;
   opacity: 1;
   margin-left: 8px;
+}
+
+.box-contact a:hover img {
+  transform: rotate(360deg);
 }
 
 footer {
