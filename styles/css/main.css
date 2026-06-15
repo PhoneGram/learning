@@ -177,7 +177,7 @@ header {
   text-decoration: none;
   text-align: center;
   background-color: #DE5B2C;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
   font-size: 26px;
   padding: 8px;
@@ -187,9 +187,9 @@ header {
 }
 
 .hero-section a:hover {
-  background-color: black;
-  color: var(--mainColor);
-  transform: rotate(-3deg);
+  background-color: #ffffff;
+  color: #DE5B2C;
+  transform: rotate(-1.5deg);
 }
 
 .grid {
