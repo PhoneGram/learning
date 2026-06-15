@@ -18,7 +18,7 @@ html {
 
 body {
   font-family: webs;
-  background-color: #f3f3f3;
+  background: linear-gradient(45deg, #22C3DF 0%, #057B8F 50%, #000 100%);
   margin: 0;
   padding: 0;
 }
@@ -48,7 +48,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: #ffffff;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   height: 80px;
@@ -103,7 +103,7 @@ header {
   right: 0;
   display: flex;
   flex-direction: column;
-  background-color: #868790;
+  background-color: #eee;
   justify-content: center;
   width: 200px;
   z-index: 100;
@@ -161,7 +161,7 @@ header {
 }
 
 .hero-section {
-  background-color: #DFDFE6;
+  background-color: #DFDFE699;
   height: 300px;
   display: flex;
   justify-content: center;
@@ -170,13 +170,14 @@ header {
   border-radius: 20px;
   margin-top: 15px;
   margin-bottom: 15px;
+  color: white;
 }
 
 .hero-section a {
   text-decoration: none;
   text-align: center;
-  background-color: var(--mainColor);
-  color: black;
+  background-color: #DE5B2C;
+  color: white;
   font-weight: bold;
   font-size: 26px;
   padding: 8px;
@@ -208,7 +209,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #D6D6D6;
+  background-color: #D6D6D699;
   border-radius: 20px;
   padding: 10px;
 }
@@ -218,8 +219,12 @@ header {
   -align: middle;
 }
 
-.box-grid > button {
-  margin-bottom: 13px;
+.box-grid > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 12px;
   width: 80%;
   height: 40px;
   color: white;
@@ -230,7 +235,12 @@ header {
   transition: all 0.3s linear;
 }
 
-.box-grid > button:hover {
+.desc-pics {
+  font-weight: bold;
+  color: black;
+}
+
+.box-grid > a:hover {
   background-color: white;
   color: var(--secColor);
   font-weight: bold;
@@ -239,14 +249,16 @@ header {
 }
 
 
-section #about + p {
-  background-color: var(--mainColor);
-  color: black;
+.p-about {
+  background-color: #DE9C2C99;
+  color: white;
   padding: 8px;
   width: 80%;
   margin: 0 auto;
   text-align: center;
   border-radius: 20px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .contact {
@@ -267,11 +279,12 @@ section #about + p {
 }
 
 .box-contact a {
-  background-color: #B1B3D4;
+  background-color: #B1B3D499;
   padding: 10px;
   text-decoration: none;
   border-radius: 30px;
   margin: 0 1.7px;
+  transition: background-color 0.4s ease;
 }
 
 .box-contact a img {
@@ -289,6 +302,10 @@ section #about + p {
   display: inline-block;
   white-space: nowrap;
   transition: max-width 0.5s ease, opacity 0.3s ease, margin 0.5s ease;
+}
+
+.box-contact a:hover {
+  background-color: #B1B3D4;
 }
 
 .box-contact a:hover span {
@@ -311,4 +328,8 @@ footer {
   align-items: center;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px
+}
+
+h2 {
+  color: #ffffff;
 }
