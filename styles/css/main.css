@@ -41,6 +41,10 @@ body {
 header {
   position: sticky;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
@@ -49,9 +53,8 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
   height: 80px;
+  width: 100%;
 }
 
 .left_header {
@@ -66,23 +69,56 @@ header {
   margin-left: 8px;
 }
 
-.middle_header {
+.search_header {
+  background-color: #ffffff;
+  padding: 5px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
+  width: 100%;
 }
 
-.middle_header input {
+.search_header input {
   padding-left: 8px;
   background-color: transparent;
   border: 2px solid black;
   border-radius: 10px;
-  width: 200px;
+  max-width: 200px;
+  overflow: visible;
   height: 35px;
 }
 
-.middle_header input::placeholder {
+.search_header input::placeholder {
+  font-family: webs;
+  padding: 6px;
+  padding-left: 0;
+}
+
+.nop {
+  padding: 5px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.nop input {
+  padding-left: 8px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  max-width: 200px;
+  overflow: visible;
+  height: 35px;
+}
+
+.nop input::placeholder {
   font-family: webs;
   padding: 6px;
   padding-left: 0;
@@ -107,8 +143,10 @@ header {
   justify-content: center;
   width: 200px;
   z-index: 100;
-  max-height: 0;
-  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3 ease;
 }
 
 .menu ul::before {
@@ -147,8 +185,9 @@ header {
 
 .menu:hover ul,
 .menu:hover ul::before {
-  max-height: 1000px;
-  overflow: visible;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .menu ul li:hover {
@@ -197,7 +236,7 @@ header {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(100px, auto));
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
   gap: 10px;
   justify-content: space-between;
 }
@@ -219,7 +258,7 @@ header {
 
 .box-grid > img {
   width: 70%;
-  -align: middle;
+  vertical-align: middle;
 }
 
 .box-grid > a {
@@ -241,6 +280,8 @@ header {
 .desc-pics {
   font-weight: bold;
   color: black;
+  height: 80px;
+  overflow: auto;
 }
 
 .box-grid > a:hover {
@@ -330,9 +371,35 @@ footer {
   justify-content: center;
   align-items: center;
   border-top-right-radius: 20px;
-  border-top-left-radius: 20px
+  border-top-left-radius: 20px;
+}
+
+h1 {
+  text-align: center;
 }
 
 h2 {
   color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .nop {
+    display: none;
+  }
+  .mw {
+    width: 95%;
+  }
+  .header {
+    height: 100px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1200px) {
+  .header {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  }
+  .search_header {
+    display: none;
+  }
 }
