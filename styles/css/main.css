@@ -185,6 +185,9 @@ header {
   width: 150px;
   transition: all 0.4s ease;
 }
+.hero-section h2 {
+  text-align: center;
+}
 
 .hero-section a:hover {
   background-color: #ffffff;
