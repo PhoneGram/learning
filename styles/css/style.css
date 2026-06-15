@@ -198,6 +198,10 @@ header {
   justify-content: space-between;
 }
 
+#services {
+  grid-column: auto / span 3;
+}
+
 
 .box-grid {
   display: flex;
@@ -212,10 +216,6 @@ header {
 .box-grid > img {
   width: 70%;
   -align: middle;
-}
-
-.desc-pics {
-  margin-right: 5iiipx;
 }
 
 .box-grid > button {
